@@ -31,32 +31,32 @@ namespace KestrelApp
             {
                 var section = context.Configuration.GetSection("Kestrel");
                 kestrel.Configure(section)
-                    // ÆÕÍ¨Telnet·şÎñÆ÷,Ê¹ÓÃtelnet¿Í»§¶Ë¾Í¿ÉÒÔ½»»¥
+                    // æ™®é€šTelnetæœåŠ¡å™¨,ä½¿ç”¨telnetå®¢æˆ·ç«¯å°±å¯ä»¥äº¤äº’
                     .Endpoint("Telnet", endpoint => endpoint.ListenOptions.UseTelnet())
 
-                    // xor(Î±)¼ÓÃÜ´«ÊäµÄTelnet·şÎñÆ÷, telnet¿Í»§¶Ë²»ÄÜ½»»¥
+                    // xor(ä¼ª)åŠ å¯†ä¼ è¾“çš„TelnetæœåŠ¡å™¨, telnetå®¢æˆ·ç«¯ä¸èƒ½äº¤äº’
                     .Endpoint("XorTelnet", endpoint => endpoint.ListenOptions.UseFlowXor().UseTelnet())
 
-                    // XorTelnet´úÀí·şÎñÆ÷£¬telnetÁ¬½Óµ½´Ë·şÎñÆ÷Ö®ºó£¬Ëü½«Á÷Á¿xorÖ®ºó´úÀíµ½XorTelnet·şÎñÆ÷£¬Ëü±¾Éí²»²ÎÓëTelnetĞ­Òé´¦Àí
+                    // XorTelnetä»£ç†æœåŠ¡å™¨ï¼Œtelnetè¿æ¥åˆ°æ­¤æœåŠ¡å™¨ä¹‹åï¼Œå®ƒå°†æµé‡xorä¹‹åä»£ç†åˆ°XorTelnetæœåŠ¡å™¨ï¼Œå®ƒæœ¬èº«ä¸å‚ä¸Telnetåè®®å¤„ç†
                     .Endpoint("XorTelnetProxy", endpoint => endpoint.ListenOptions.UseFlowXor().UseXorTelnetProxy())
 
-                    // http´úÀí·şÎñÆ÷£¬ÄÜ´¦ÀíËíµÀ´úÀíµÄ³¡¾°
+                    // httpä»£ç†æœåŠ¡å™¨ï¼Œèƒ½å¤„ç†éš§é“ä»£ç†çš„åœºæ™¯
                     .Endpoint("HttpProxy", endpoint => endpoint.ListenOptions.UseHttpProxy())
 
-                    // httpºÍhttpsµ¥¶Ë¿ÚË«Ğ­Òé·şÎñÆ÷
+                    // httpå’Œhttpså•ç«¯å£åŒåè®®æœåŠ¡å™¨
                     .Endpoint("HttpHttps", endpoint => endpoint.ListenOptions.UseTlsDetection())
 
-                    // echo»òecho over tlsĞ­Òé·şÎñÆ÷
+                    // echoæˆ–echo over tlsåè®®æœåŠ¡å™¨
                     .Endpoint("Echo", endpoint => endpoint.ListenOptions.UseTlsDetection().UseEcho())
 
-                    // redisĞ­Òé·şÎñÆ÷
+                    // redisåè®®æœåŠ¡å™¨
                     .Endpoint("Redis", endpoint => endpoint.ListenOptions.UseRedis());
             });
 
             var app = builder.Build();
             app.UseRouting();
 
-            // http´úÀíÖĞ¼ä¼ş£¬ÄÜ´¦Àí·ÇËíµÀµÄhttp´úÀíÇëÇó
+            // httpä»£ç†ä¸­é—´ä»¶ï¼Œèƒ½å¤„ç†ééš§é“çš„httpä»£ç†è¯·æ±‚
             app.UseMiddleware<HttpProxyMiddleware>();
 
             // Telnet over WebSocket
