@@ -11,7 +11,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Yarp.ReverseProxy" Version="1.1.1" />
+		<PackageReference Include="Yarp.ReverseProxy" Version="1.1.2" />
 		<ProjectReference Include="..\KestrelFramework\KestrelFramework.csproj" />
 	</ItemGroup>
 
