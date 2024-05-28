@@ -53,7 +53,7 @@ namespace KestrelApp.Middleware.Redis
         }
 
         public ValueTask<FlushResult> WriteAsync(ResponseContent content)
-        { 
+        {
             return this.writer.WriteAsync(content.ToMemory());
         }
     }

@@ -15,7 +15,7 @@ namespace Microsoft.AspNetCore.Hosting
         /// 使用Tls侦测中间件
         /// 效果是同一个端口支持某协议的非tls和tls两种流量
         /// </summary>
-        /// <param name="listen"></param> 
+        /// <param name="listen"></param>
         /// <returns></returns>
         public static ListenOptions UseTlsDetection(this ListenOptions listen)
         {

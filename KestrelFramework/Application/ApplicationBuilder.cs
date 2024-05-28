@@ -60,7 +60,7 @@ namespace KestrelFramework.Application
         public ApplicationBuilder<TContext> New()
         {
             return new ApplicationBuilder<TContext>(this.ApplicationServices, this.fallbackHandler);
-        }         
+        }
 
         /// <summary>
         /// 条件中间件
@@ -121,7 +121,7 @@ namespace KestrelFramework.Application
 
         /// <summary>
         /// 使用中间件
-        /// </summary> 
+        /// </summary>
         /// <typeparam name="TMiddleware"></typeparam> 
         /// <param name="middleware"></param>
         /// <returns></returns>
@@ -133,7 +133,7 @@ namespace KestrelFramework.Application
 
         /// <summary>
         /// 使用中间件
-        /// </summary>  
+        /// </summary>
         /// <param name="middleware"></param>
         /// <returns></returns>
         public ApplicationBuilder<TContext> Use(Func<ApplicationDelegate<TContext>, TContext, Task> middleware)

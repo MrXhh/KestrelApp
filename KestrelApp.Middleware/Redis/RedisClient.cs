@@ -28,7 +28,7 @@ namespace KestrelApp.Middleware.Redis
         {
             this.context = context;
         }
-        
+
         /// <summary>
         /// 关闭连接
         /// </summary>

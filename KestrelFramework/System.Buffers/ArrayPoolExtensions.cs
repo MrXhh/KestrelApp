@@ -15,6 +15,6 @@
         public static IArrayOwner<T> RentArrayOwner<T>(this ArrayPool<T> arrayPool, int length)
         {
             return new ArrayOwner<T>(arrayPool, length);
-        }       
+        }
     }
 }

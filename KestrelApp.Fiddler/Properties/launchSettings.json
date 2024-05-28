@@ -1,14 +1,14 @@
 ﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",   
+  "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
     "KestrelApp.Fiddler": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true, 
+      "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    } 
+    }
   }
 }

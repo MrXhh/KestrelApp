@@ -7,7 +7,7 @@ namespace KestrelApp.Middleware.HttpProxy
     /// 代理身份认证
     /// </summary>
     sealed class HttpProxyAuthenticationHandler : IHttpProxyAuthenticationHandler
-    { 
+    {
         public ValueTask<bool> AuthenticateAsync(AuthenticationHeaderValue? authentication)
         {
             return ValueTask.FromResult(true);

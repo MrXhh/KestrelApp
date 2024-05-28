@@ -91,9 +91,9 @@ namespace KestrelApp.Fiddler.Certs
             else
             {
                 this.logger.LogWarning($"请根据你的系统平台手动安装和信任CA证书{this.CaCerFilePath}");
-            } 
+            }
         }
-         
+
 
         /// <summary>
         /// 获取颁发给指定域名的证书

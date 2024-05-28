@@ -135,7 +135,7 @@ namespace KestrelApp.Fiddler.Certs
 
 
         private static X509Extension GetAuthorityKeyIdentifierExtension(X509Certificate2 certificate)
-        { 
+        {
             var extension = new X509SubjectKeyIdentifierExtension(certificate.PublicKey, false);
 #if NET7_0_OR_GREATER
             return X509AuthorityKeyIdentifierExtension.CreateFromSubjectKeyIdentifier(extension);
